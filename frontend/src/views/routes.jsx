@@ -83,6 +83,10 @@ const AppRoutes = () => {
         path='/json-portal'
         element={<PrivateRoute component={Views.MachineLearning.JsonPortal} />}
       />
+      <Route
+        path='/explore'
+        element={<PrivateRoute component={Views.Explore} />}
+      />
     </Routes>
   )
 }

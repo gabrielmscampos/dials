@@ -12,6 +12,7 @@ import {
   Histogram,
 } from './dataExplorer'
 import { Predictions, JsonPortal } from './machineLearning'
+import Explore from './explore'
 
 const Views = {
   Home,
@@ -31,6 +32,7 @@ const Views = {
     Predictions,
     JsonPortal,
   },
+  Explore,
 }
 
 export default Views

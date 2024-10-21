@@ -602,6 +602,23 @@ const genericFetchAllPages = async ({ apiMethod, params = {} }) => {
   }
 }
 
+const getOMSDatasetrates = async ({ datasetName, runNumber }) => {
+  const endpoint = `${API_URL}/oms-proxy/`
+  const params = sanitizedURLSearchParams(
+    {
+      'endpoint': 'datasetrates',
+      'filter[run_number]': runNumber,
+      'filter[dataset_name]': datasetName,
+      'page[limit]': 5000,
+    },
+    { repeatMode: false }
+  )
+  const response = await axiosApiInstance.get(endpoint, {
+    params,
+  })
+  return response.data
+}
+
 const API = {
   utils: {
     genericFetchAllPages,
@@ -659,6 +676,9 @@ const API = {
     brilcalc: {
       lumi: getBrilcalcLumi,
     },
+  },
+  oms: {
+    datasetrates: getOMSDatasetrates,
   },
 }
 
